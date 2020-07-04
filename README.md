@@ -1,5 +1,6 @@
 # get-pods-addon
-
+Nothing here yet....
+## Notes to self: 
 refer [kubectl tree](https://github.com/ahmetb/kubectl-tree) for inspiration 
 
 #### Use following packages:
