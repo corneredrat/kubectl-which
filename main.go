@@ -1,5 +1,5 @@
 /*
-Copyright © 2020 Raghu Nandan B S raghunandankst@gmail.com
+Copyright © 2020 NAME HERE <EMAIL ADDRESS>
 
 Licensed under the Apache License, Version 2.0 (the "License");
 you may not use this file except in compliance with the License.
@@ -15,7 +15,7 @@ limitations under the License.
 */
 package main
 
-import "github.com/corneredrat/get-pods-addon/cmd"
+import "github.com/corneredrat/kubectl-watch/cmd"
 
 func main() {
 	cmd.Execute()
