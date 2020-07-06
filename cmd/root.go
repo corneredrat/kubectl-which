@@ -31,9 +31,8 @@ var cfgFile string
 var rootCmd = &cobra.Command{
 	Use:   "kubectl which <image/node> <pod/job>",
 	Short: "Displays an aspect of the pod.",
-	Long:  `Example: 
-	kubectl which image nginx-a0s7fs9gas-87dsa
-	kubectl which node nginx-a0s7fs9gas-87dsa`,
+	Example: "kubectl which image nginx-a0s7fs9gas-87dsa\n" +
+		"kubectl which node nginx-a0s7fs9gas-87dsa\n",
 	// Uncomment the following line if your bare application
 	// has an action associated with it:
 	//	Run: func(cmd *cobra.Command, args []string) { },
