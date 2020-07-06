@@ -1,4 +1,4 @@
-# get-pods-addon
+# kubectl-which
 Nothing here yet....
 ## Notes to self: 
 refer [kubectl tree](https://github.com/ahmetb/kubectl-tree) for inspiration 
