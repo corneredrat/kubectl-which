@@ -15,7 +15,7 @@ limitations under the License.
 */
 package main
 
-import "github.com/corneredrat/kubectl-watch/cmd"
+import "github.com/corneredrat/kubectl-which/cmd"
 
 func main() {
 	cmd.Execute()
