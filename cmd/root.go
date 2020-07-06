@@ -33,7 +33,7 @@ var rootCmd = &cobra.Command{
 	Short: "Displays an aspect of the pod.",
 	Example: "kubectl which image nginx-a0s7fs9gas-87dsa\n" +
 		"kubectl which node nginx-a0s7fs9gas-87dsa\n",
-	runE: run
+	runE: run,
 	// Uncomment the following line if your bare application
 	// has an action associated with it:
 	//	Run: func(cmd *cobra.Command, args []string) { },
