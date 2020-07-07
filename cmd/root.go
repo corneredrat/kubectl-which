@@ -25,6 +25,12 @@ import (
 	"github.com/spf13/viper"
 )
 
+const (
+	allNamespacesFlag 		= "all-namespaces"
+	namespaceFlag			= "namespace"
+	namespaceFlagShorthand	= "n"
+)
+
 var cfgFile string
 
 // rootCmd represents the base command when called without any subcommands
@@ -40,7 +46,7 @@ var rootCmd = &cobra.Command{
 }
 
 func run(cmd *cobra.Command, args []string) error {
-	fmt.Println(cmd)
+	fmt.Println(cmd.Flags())
 	return nil
 }
 
