@@ -46,7 +46,7 @@ var rootCmd = &cobra.Command{
 }
 
 func run(cmd *cobra.Command, args []string) error {
-	fmt.Println(cmd.Flags())
+	fmt.Println(cmd.UsageString())
 	return nil
 }
 
