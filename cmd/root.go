@@ -24,7 +24,7 @@ import (
 	homedir "github.com/mitchellh/go-homedir"
 	"github.com/spf13/viper"
 	"k8s.io/cli-runtime/pkg/genericclioptions"
-	_ "k8s.io/client-go/plugin/pkg/client/auth" // combined authprovider import
+//	_ "jtestard/client-go/plugin/pkg/client/auth" // combined authprovider import
 )
 
 const (
