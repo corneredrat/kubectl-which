@@ -1,4 +1,4 @@
-module github.com/ahmetb/kubectl-tree/cmd
+module github.com/ahmetb/kubectl-tree
 
 go 1.13
 
