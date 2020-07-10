@@ -23,7 +23,7 @@ import (
 
 	homedir "github.com/mitchellh/go-homedir"
 	"github.com/spf13/viper"
-	//	"k8s.io/cli-runtime/pkg/genericclioptions" // https://godoc.org/k8s.io/cli-runtime/pkg/genericclioptions#ConfigFlags
+	"k8s.io/cli-runtime/pkg/genericclioptions"
 )
 
 const (
@@ -34,7 +34,7 @@ const (
 
 var cfgFile string
 
-//var configFlags *genericclioptions.ConfigFlags
+var configFlags *genericclioptions.ConfigFlags
 
 // rootCmd represents the base command when called without any subcommands
 var rootCmd = &cobra.Command{
@@ -76,9 +76,9 @@ func init() {
 	rootCmd.Flags().BoolP("toggle", "t", false, "Help message for toggle")
 
 	// Pass CLI flags to k8s genericclioptions.ConfigFlags
-	//configFlags = genericclioptions.NewConfigFlags(true) // usePersistentConfig = true
+	configFlags = genericclioptions.NewConfigFlags(true) // usePersistentConfig = true
 	//configFlags.AddFlags(rootCmd.Flags())
-	//fmt.Println(configFlags.ToRESTConfig())
+	fmt.Println(configFlags.ToRESTConfig())
 }
 
 // initConfig reads in config file and ENV variables if set.
