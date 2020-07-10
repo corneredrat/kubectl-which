@@ -7,7 +7,7 @@ require (
 	github.com/emicklei/go-restful v2.9.6+incompatible // indirect
 	github.com/evanphx/json-patch v4.5.0+incompatible // indirect
 	github.com/fatih/color v1.7.0
-	github.com/googleapis/gnostic v0.3.0 // indirect
+//	github.com/googleapis/gnostic v0.3.0 // indirect
 	github.com/gosuri/uitable v0.0.4
 	github.com/gregjones/httpcache v0.0.0-20190611155906-901d90724c79 // indirect
 	github.com/imdario/mergo v0.3.7 // indirect
