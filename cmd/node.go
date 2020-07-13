@@ -31,4 +31,14 @@ var nodeCmd = &cobra.Command{
 
 func init() {
 	rootCmd.AddCommand(nodeCmd)
+	
+	cf = genericclioptions.NewConfigFlags(true)
+
+	nodeCmd.Flags().BoolP(allNamespacesFlag, "A", false, "query all objects in all API groups, both namespaced and non-namespaced")
+	
+	cf.AddFlags(nodeCmd.Flags())
+	if err := flag.Set("logtostderr", "true"); err != nil {
+		fmt.Fprintf(os.Stderr, "failed to set logtostderr flag: %v\n", err)
+		os.Exit(1)
+	}
 }

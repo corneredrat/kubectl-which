@@ -39,13 +39,13 @@ to quickly create a Cobra application.`,
 func init() {
 	rootCmd.AddCommand(imageCmd)
 
-	// Here you will define your flags and configuration settings.
+	cf = genericclioptions.NewConfigFlags(true)
 
-	// Cobra supports Persistent Flags which will work for this command
-	// and all subcommands, e.g.:
-	// imageCmd.PersistentFlags().String("foo", "", "A help for foo")
+	rootCmd.Flags().BoolP(allNamespacesFlag, "A", false, "query all objects in all API groups, both namespaced and non-namespaced")
 
-	// Cobra supports local flags which will only run when this command
-	// is called directly, e.g.:
-	// imageCmd.Flags().BoolP("toggle", "t", false, "Help message for toggle")
+	cf.AddFlags(rootCmd.Flags())
+	if err := flag.Set("logtostderr", "true"); err != nil {
+		fmt.Fprintf(os.Stderr, "failed to set logtostderr flag: %v\n", err)
+		os.Exit(1)
+	}
 }
