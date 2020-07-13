@@ -19,6 +19,7 @@ import (
 	"fmt"
 
 	"github.com/spf13/cobra"
+	"k8s.io/cli-runtime/pkg/genericclioptions"
 )
 
 // imageCmd represents the image command
@@ -39,15 +40,9 @@ to quickly create a Cobra application.`,
 func init() {
 	rootCmd.AddCommand(imageCmd)
 
-	cf = genericclioptions.NewConfigFlags(true)
-
 	imageCmd.Flags().BoolP(allNamespacesFlag, "A", false, "query all objects in all API groups, both namespaced and non-namespaced")
 
 	//AddFlags binds client configuration flags to a given flagset
-	cf.AddFlags(imageCmd.Flags())
-	
-	if err := flag.Set("logtostderr", "true"); err != nil {
-		fmt.Fprintf(os.Stderr, "failed to set logtostderr flag: %v\n", err)
-		os.Exit(1)
-	}
+	configFlags = genericclioptions.NewConfigFlags(true) // usePersistentConfig = true
+	configFlags.AddFlags(rootCmd.Flags())
 }
