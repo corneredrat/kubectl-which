@@ -79,7 +79,6 @@ func init() {
 	// Pass CLI flags to k8s genericclioptions.ConfigFlags
 	configFlags = genericclioptions.NewConfigFlags(true) // usePersistentConfig = true
 	configFlags.AddFlags(rootCmd.Flags())
-	fmt.Println(configFlags.ToRESTConfig())
 }
 
 // initConfig reads in config file and ENV variables if set.
