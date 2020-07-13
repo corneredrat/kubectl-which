@@ -41,9 +41,11 @@ func init() {
 
 	cf = genericclioptions.NewConfigFlags(true)
 
-	rootCmd.Flags().BoolP(allNamespacesFlag, "A", false, "query all objects in all API groups, both namespaced and non-namespaced")
+	imageCmd.Flags().BoolP(allNamespacesFlag, "A", false, "query all objects in all API groups, both namespaced and non-namespaced")
 
-	cf.AddFlags(rootCmd.Flags())
+	//AddFlags binds client configuration flags to a given flagset
+	cf.AddFlags(imageCmd.Flags())
+	
 	if err := flag.Set("logtostderr", "true"); err != nil {
 		fmt.Fprintf(os.Stderr, "failed to set logtostderr flag: %v\n", err)
 		os.Exit(1)

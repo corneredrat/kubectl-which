@@ -35,8 +35,10 @@ func init() {
 	cf = genericclioptions.NewConfigFlags(true)
 
 	nodeCmd.Flags().BoolP(allNamespacesFlag, "A", false, "query all objects in all API groups, both namespaced and non-namespaced")
-	
+
+	//AddFlags binds client configuration flags to a given flagset
 	cf.AddFlags(nodeCmd.Flags())
+	
 	if err := flag.Set("logtostderr", "true"); err != nil {
 		fmt.Fprintf(os.Stderr, "failed to set logtostderr flag: %v\n", err)
 		os.Exit(1)
