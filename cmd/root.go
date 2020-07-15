@@ -72,7 +72,7 @@ func init() {
 
 	rootCmd.PersistentFlags().StringVar(&cfgFile, "config", "", "config file (default is $HOME/.kubectl-which.yaml)")
 	rootCmd.PersistentFlags().StringVar(&kind, "kind", "", "\"Kind\" of kubernetes objects that needs inspection.")
-
+	viper.BindPFlag("kind", rootCmd.PersistentFlags().Lookup("kind"))
 	// Cobra also supports local flags, which will only run
 	// when this action is called directly.
 	rootCmd.Flags().BoolP("toggle", "t", false, "Help message for toggle")
