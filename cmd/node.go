@@ -25,16 +25,19 @@ import (
 var nodeCmd = &cobra.Command{
 	Use:   "node",
 	Short: "Displays node in which the resources is scheduled.",
-	Run: func(cmd *cobra.Command, args []string) {
-		fmt.Println("To be implemented.")
+	RunE: runE
 	},
+}
+
+func runE(cmd *cobra.Command, args []string) {
+	fmt.Println("To be implemented.")
 }
 
 func init() {
 	rootCmd.AddCommand(nodeCmd)
 
 	nodeCmd.Flags().BoolP(allNamespacesFlag, "A", false, "query all objects in all API groups, both namespaced and non-namespaced")
-		// Pass CLI flags to k8s genericclioptions.ConfigFlags
+	// Pass CLI flags to k8s genericclioptions.ConfigFlags
 	configFlags = genericclioptions.NewConfigFlags(true) // usePersistentConfig = true
 	configFlags.AddFlags(nodeCmd.Flags())
 }
