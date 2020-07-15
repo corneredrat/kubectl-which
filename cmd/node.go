@@ -34,5 +34,7 @@ func init() {
 	rootCmd.AddCommand(nodeCmd)
 
 	nodeCmd.Flags().BoolP(allNamespacesFlag, "A", false, "query all objects in all API groups, both namespaced and non-namespaced")
-
+		// Pass CLI flags to k8s genericclioptions.ConfigFlags
+	configFlags = genericclioptions.NewConfigFlags(true) // usePersistentConfig = true
+	configFlags.AddFlags(nodeCmd.Flags())
 }

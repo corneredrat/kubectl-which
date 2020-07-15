@@ -75,8 +75,8 @@ func init() {
 	// Cobra also supports local flags, which will only run
 	// when this action is called directly.
 	rootCmd.Flags().BoolP("toggle", "t", false, "Help message for toggle")
-
-
+	configFlags = genericclioptions.NewConfigFlags(true) // usePersistentConfig = true
+	configFlags.AddFlags(rootCmd.Flags())
 }
 
 // initConfig reads in config file and ENV variables if set.
