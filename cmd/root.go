@@ -76,9 +76,6 @@ func init() {
 	// when this action is called directly.
 	rootCmd.Flags().BoolP("toggle", "t", false, "Help message for toggle")
 
-	// Pass CLI flags to k8s genericclioptions.ConfigFlags
-	configFlags = genericclioptions.NewConfigFlags(true) // usePersistentConfig = true
-	configFlags.AddFlags(rootCmd.Flags())
 
 }
 
