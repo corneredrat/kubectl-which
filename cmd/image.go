@@ -41,8 +41,4 @@ func init() {
 	rootCmd.AddCommand(imageCmd)
 
 	imageCmd.Flags().BoolP(allNamespacesFlag, "A", false, "query all objects in all API groups, both namespaced and non-namespaced")
-
-	//AddFlags binds client configuration flags to a given flagset
-	configFlags = genericclioptions.NewConfigFlags(true) // usePersistentConfig = true
-	configFlags.AddFlags(rootCmd.Flags())
 }
