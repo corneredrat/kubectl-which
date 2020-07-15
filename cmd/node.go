@@ -19,6 +19,7 @@ import (
 	"fmt"
 
 	"github.com/spf13/cobra"
+	"k8s.io/cli-runtime/pkg/genericclioptions"
 )
 
 var nodeCmd = &cobra.Command{
@@ -33,4 +34,6 @@ func init() {
 	rootCmd.AddCommand(nodeCmd)
 
 	nodeCmd.Flags().BoolP(allNamespacesFlag, "A", false, "query all objects in all API groups, both namespaced and non-namespaced")
+	configFlags = genericclioptions.NewConfigFlags(true) // usePersistentConfig = true
+	configFlags.AddFlags(rootCmd.Flags())	
 }
