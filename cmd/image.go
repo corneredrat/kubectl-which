@@ -19,7 +19,7 @@ import (
 	"fmt"
 
 	"github.com/spf13/cobra"
-	"k8s.io/cli-runtime/pkg/genericclioptions"
+	//"k8s.io/cli-runtime/pkg/genericclioptions"
 )
 
 // imageCmd represents the image command
@@ -41,6 +41,5 @@ func init() {
 	rootCmd.AddCommand(imageCmd)
 
 	imageCmd.Flags().BoolP(allNamespacesFlag, "A", false, "query all objects in all API groups, both namespaced and non-namespaced")
-	configFlags = genericclioptions.NewConfigFlags(true) // usePersistentConfig = true
-	configFlags.AddFlags(rootCmd.Flags())
+
 }

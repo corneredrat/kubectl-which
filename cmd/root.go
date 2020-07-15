@@ -24,7 +24,7 @@ import (
 	homedir "github.com/mitchellh/go-homedir"
 	"github.com/spf13/viper"
 	"k8s.io/cli-runtime/pkg/genericclioptions"
-	//	_ "jtestard/client-go/plugin/pkg/client/auth" // combined authprovider import
+	// _ "jtestard/client-go/plugin/pkg/client/auth" // combined authprovider import
 )
 
 const (
@@ -77,6 +77,8 @@ func init() {
 	rootCmd.Flags().BoolP("toggle", "t", false, "Help message for toggle")
 
 	// Pass CLI flags to k8s genericclioptions.ConfigFlags
+	configFlags = genericclioptions.NewConfigFlags(true) // usePersistentConfig = true
+	configFlags.AddFlags(rootCmd.Flags())
 
 }
 
